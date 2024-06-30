@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    background-image: url(photo.jpg);
+    background-position: center; /*places background image to center */
+    background-repeat: no-repeat;
+    background-size: cover; /* helps to cover the whole image */
+    background-attachment: fixed;/* helps to cover the whole window even time of scrolling */
+    width: 100%;
+    height: 100%;
+}
+#clockcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#clock{
+    font-weight: bold;
+    font-size: 8em;
+    font-family: monospace;
+    text-align: center;
+    color: white;
+    width: 100%;
+    background-color: rgba(255, 252, 252, 0.414);
+    backdrop-filter: blur(5px);/* sets blur in image */
+    position: fixed;
+}
+#startButton {
+    margin-top: 20px; /* Adds space between clock and button */
+    padding: 10px 20px;
+    font-size: 1.5em;
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#startButton:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background on hover */
+}
+.rain {
+    position: absolute;
+    width: 2px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+    top: -100vh;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(200vh);
+    }
+}
+
+.rain:nth-child(2n) { left: 20%; animation-duration: 1.5s; }
+.rain:nth-child(3n) { left: 40%; animation-duration: 2s; }
+.rain:nth-child(4n) { left: 60%; animation-duration: 1.2s; }
+.rain:nth-child(5n) { left: 80%; animation-duration: 1.8s; }
